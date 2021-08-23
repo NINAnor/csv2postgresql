@@ -1,0 +1,8 @@
+# PDM
+.pdm.toml
+__pypackages__/
+__pycache__/
+*.egg-info/
+
+# Spyder
+.spyproject/
