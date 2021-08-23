@@ -2,6 +2,7 @@
 .pdm.toml
 __pypackages__/
 __pycache__/
+dist/
 *.egg-info/
 
 # Spyder
