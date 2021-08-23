@@ -8,16 +8,16 @@ columns or having columns arranged in a different order can be easily imported.
 
 # Setup
 
-The software requires [PDM](https://pdm.fming.dev/index.html#installation) to run.
+The software can be installed using `pip` or `pipx`, which is preferred.
 
 ```
-pdm install --no-self
+pipx install csv2postgresql
 ```
 
 # Help
 
 ```
-$ pdm run python csv2postgresql.py --help
+$ csv2postgresql --help
 usage: csv2postgresql [-h] [--input-file INPUT_FILE] [--delimiter DELIMITER] [--quotechar QUOTECHAR]
                       [--escapechar ESCAPECHAR] [--encoding ENCODING]
                       dsn table
@@ -41,5 +41,5 @@ optional arguments:
 # Example
 
 ```
-pdm run python csv2postgresql.py -i table.csv postgresql://user:password@localhost/db table
+csv2postgresql -i table.csv postgresql://user:password@localhost/db table
 ```
