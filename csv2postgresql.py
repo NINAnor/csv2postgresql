@@ -8,7 +8,7 @@ import sys
 from psycopg2 import connect, sql
 
 
-def main(input_file, dsn, table, delimiter, quotechar, escapechar, encoding):
+def main(input_file, dsn, schema, table, delimiter, quotechar, escapechar, encoding):
     with connect(dsn) as conn:
         with conn.cursor() as cur:
             reader = csv.reader(input_file, delimiter=delimiter)
@@ -31,7 +31,7 @@ def main(input_file, dsn, table, delimiter, quotechar, escapechar, encoding):
                      {options})
             """
             ).format(
-                table=sql.Identifier(table),
+                table=sql.Identifier(schema, table),
                 columns=sql.SQL(", ").join(
                     [sql.Identifier(c) for c in header]
                 ),
@@ -46,6 +46,7 @@ def cli():
     )
     parser.add_argument("dsn")
     parser.add_argument("table")
+    parser.add_argument("--schema", "-s", default="public")
     parser.add_argument(
         "--input-file",
         "-i",
