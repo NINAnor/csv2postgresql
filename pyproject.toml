@@ -1,6 +1,6 @@
 [project]
 name = "csv2postgresql"
-version = "0.1.2"
+version = "0.1.3"
 description = "Load CSV with header into PostgreSQL"
 authors = [
     {name = "Francesco Frassinelli", email = "francesco.frassinelli@nina.no"},
